@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIIT - Darjeeling Institute of Information Technology | Sonada</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+  <!-- Header & Navigation -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="bg-indigo-600 text-white p-2 rounded-lg font-bold text-xl tracking-wider">DIIT</div>
+        <div>
+          <span class="text-lg font-bold text-gray-900 block leading-none">DIIT Sonada</span>
+          <span class="text-xs text-gray-500">Darjeeling Institute of Info Tech</span>
+        </div>
+      </div>
+      <nav class="hidden md:flex space-x-8 font-medium text-sm text-gray-600">
+        <a href="#about" class="hover:text-indigo-600 transition">About</a>
+        <a href="#courses" class="hover:text-indigo-600 transition">Courses</a>
+        <a href="#contact" class="hover:text-indigo-600 transition">Contact Us</a>
+      </nav>
+      <a href="#courses" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition shadow-sm">
+        Explore Courses
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-slate-900 to-indigo-950 text-white py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-block bg-indigo-500/20 text-indigo-300 text-xs font-semibold px-3 py-1 rounded-full border border-indigo-400/30 mb-4">
+          Empowering Youth in Sonada
+        </span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">
+          Build Your IT Career at <span class="text-indigo-400">DIIT</span>
+        </h1>
+        <p class="text-lg text-gray-300 mb-8">
+          Quality computer education, diploma programs, and job-oriented skills right here in Sonada, Darjeeling.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#courses" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-lg font-semibold shadow-lg transition">
+            View Programs
+          </a>
+          <a href="#contact" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3 rounded-lg font-semibold transition">
+            Visit Center
+          </a>
+        </div>
+      </div>
+      <div class="bg-white/5 border border-white/10 p-6 rounded-2xl shadow-2xl backdrop-blur-sm">
+        <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-bullhorn text-indigo-400"></i> Why Choose DIIT?
+        </h3>
+        <ul class="space-y-3 text-sm text-gray-300">
+          <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-indigo-400 mt-1"></i> Practical, hands-on computer lab training</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-indigo-400 mt-1"></i> Government recognized certification support</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-indigo-400 mt-1"></i> Flexible batch timings for school & college students</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-indigo-400 mt-1"></i> Affordable fee structure tailored for local students</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section id="courses" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900">Our Offered Courses</h2>
+      <p class="text-gray-600 mt-2">Filter and choose the best program for your career goals</p>
+      
+      <!-- Category Filter Buttons -->
+      <div class="flex justify-center flex-wrap gap-2 mt-6" id="filter-buttons">
+        <button onclick="filterCourses('All')" class="filter-btn active bg-indigo-600 text-white px-4 py-1.5 rounded-full text-sm font-medium transition">All Courses</button>
+        <button onclick="filterCourses('Diploma')" class="filter-btn bg-gray-200 text-gray-700 hover:bg-gray-300 px-4 py-1.5 rounded-full text-sm font-medium transition">Diplomas</button>
+        <button onclick="filterCourses('Accounting')" class="filter-btn bg-gray-200 text-gray-700 hover:bg-gray-300 px-4 py-1.5 rounded-full text-sm font-medium transition">Accounting</button>
+        <button onclick="filterCourses('Short Term')" class="filter-btn bg-gray-200 text-gray-700 hover:bg-gray-300 px-4 py-1.5 rounded-full text-sm font-medium transition">Short Term</button>
+      </div>
+    </div>
+
+    <!-- Dynamic Course Grid (Populated via JSON) -->
+    <div id="course-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Cards rendered dynamically -->
+    </div>
+  </section>
+
+  <!-- Contact & Location Section -->
+  <section id="contact" class="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Visit Our Center</h2>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="bg-indigo-100 text-indigo-600 p-3 rounded-lg"><i class="fa-solid fa-location-dot text-lg"></i></div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Location</h4>
+              <p class="text-sm text-gray-600">DIIT Computer Center, Main Market, Sonada, Darjeeling, West Bengal - 734209</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="bg-indigo-100 text-indigo-600 p-3 rounded-lg"><i class="fa-solid fa-phone text-lg"></i></div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Phone & WhatsApp</h4>
+              <p class="text-sm text-gray-600">+91 98000 00000 / +91 97000 00000</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="bg-indigo-100 text-indigo-600 p-3 rounded-lg"><i class="fa-solid fa-clock text-lg"></i></div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Working Hours</h4>
+              <p class="text-sm text-gray-600">Monday - Saturday: 8:00 AM - 5:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Inquiry Form -->
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Admissions & Inquiry</h3>
+        <form onsubmit="handleInquiry(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Full Name</label>
+            <input type="text" required placeholder="Enter your name" class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-indigo-600">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Phone Number</label>
+            <input type="tel" required placeholder="Enter 10-digit number" class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-indigo-600">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Select Course</label>
+            <select id="form-course-select" class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-indigo-600">
+              <!-- Options populated dynamically from JSON -->
+            </select>
+          </div>
+          <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-lg text-sm transition">
+            Submit Inquiry
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-sm py-8 text-center">
+    <p>&copy; 2026 DIIT Sonada, Darjeeling. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript to handle JSON Data Rendering -->
+  <script>
+    // JSON Data Store
+    const coursesData = [
+      {
+        id: "dca",
+        title: "Diploma in Computer Applications (DCA)",
+        category: "Diploma",
+        duration: "6 Months",
+        fee: "₹4,500",
+        description: "A foundational course covering computer basics, MS Office, internet fundamentals, and operating systems.",
+        syllabus: ["Computer Fundamentals & OS", "MS Word, Excel, PowerPoint", "Internet & Email Usage", "Basic Hardware & Troubleshooting"]
+      },
+      {
+        id: "adca",
+        title: "Advanced Diploma in Computer Applications (ADCA)",
+        category: "Diploma",
+        duration: "12 Months",
+        fee: "₹8,500",
+        description: "Comprehensive IT diploma covering office automation, graphic designing, and financial accounting.",
+        syllabus: ["DCA Complete Syllabus", "Tally Prime with GST", "Photoshop & Graphic Basics", "Web Design Fundamentals"]
+      },
+      {
+        id: "tally",
+        title: "Tally Prime with GST",
+        category: "Accounting",
+        duration: "3 Months",
+        fee: "₹3,500",
+        description: "Specialized financial accounting course designed for job readiness in businesses and offices.",
+        syllabus: ["Bookkeeping Fundamentals", "Voucher Entry & Inventory", "GST Calculation & Returns", "Payroll & Financial Reports"]
+      },
+      {
+        id: "dtp",
+        title: "Desktop Publishing (DTP)",
+        category: "Short Term",
+        duration: "3 Months",
+        fee: "₹3,000",
+        description: "Learn digital designing tools for creating banners, pamphlets, cards, and publications.",
+        syllabus: ["Adobe Photoshop", "CorelDRAW", "PageMaker", "Bengali/Nepali/English Typing"]
+      },
+      {
+        id: "typing",
+        title: "English & Local Language Typing",
+        category: "Short Term",
+        duration: "1 Month",
+        fee: "₹1,200",
+        description: "Speed development course for government exams and administrative office tasks.",
+        syllabus: ["Touch Typing Technique", "Speed Improvement Exercises", "Nepali & Unicode Typing Basics"]
+      }
+    ];
+
+    // Function to render course cards dynamically
+    function renderCourses(data) {
+      const grid = document.getElementById('course-grid');
+      const select = document.getElementById('form-course-select');
+      
+      grid.innerHTML = '';
+      select.innerHTML = '<option value="">Select a course...</option>';
+
+      data.forEach(course => {
+        // Populate select box
+        const option = document.createElement('option');
+        option.value = course.id;
+        option.textContent = course.title;
+        select.appendChild(option);
+
+        // Populate course grid cards
+        const card = document.createElement('div');
+        card.className = "bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between";
+        card.innerHTML = `
+          <div>
+            <div class="flex justify-between items-start mb-3">
+              <span class="bg-indigo-50 text-indigo-700 text-xs font-semibold px-2.5 py-1 rounded-full">${course.category}</span>
+              <span class="text-xs font-bold text-gray-500"><i class="fa-regular fa-clock"></i> ${course.duration}</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">${course.title}</h3>
+            <p class="text-sm text-gray-600 mb-4">${course.description}</p>
+            <div class="mb-4">
+              <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Key Topics Covered</h4>
+              <ul class="text-xs text-gray-600 space-y-1">
+                ${course.syllabus.map(item => `<li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-indigo-500"></i> ${item}</li>`).join('')}
+              </ul>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-gray-100 flex items-center justify-between mt-auto">
+            <div>
+              <span class="text-xs text-gray-400 block">Total Fee</span>
+              <span class="text-lg font-bold text-gray-900">${course.fee}</span>
+            </div>
+            <a href="#contact" onclick="selectCourseForInquiry('${course.id}')" class="text-indigo-600 hover:text-indigo-800 text-sm font-semibold flex items-center gap-1">
+              Inquire <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Function to filter courses by category
+    function filterCourses(category) {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => {
+        if (btn.textContent.includes(category) || (category === 'All' && btn.textContent === 'All Courses')) {
+          btn.className = "filter-btn active bg-indigo-600 text-white px-4 py-1.5 rounded-full text-sm font-medium transition";
+        } else {
+          btn.className = "filter-btn bg-gray-200 text-gray-700 hover:bg-gray-300 px-4 py-1.5 rounded-full text-sm font-medium transition";
+        }
+      });
+
+      if (category === 'All') {
+        renderCourses(coursesData);
+      } else {
+        const filtered = coursesData.filter(c => c.category === category);
+        renderCourses(filtered);
+      }
+    }
+
+    // Helper to auto-select course in form
+    function selectCourseForInquiry(courseId) {
+      document.getElementById('form-course-select').value = courseId;
+    }
+
+    // Handle dummy inquiry submission
+    function handleInquiry(e) {
+      e.preventDefault();
+      alert('Thank you for reaching out to DIIT Sonada! We will get back to you shortly.');
+      e.target.reset();
+    }
+
+    // Initial Render
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCourses(coursesData);
+    });
+  </script>
+</body>
+</html>
