@@ -1,0 +1,71 @@
+[
+  {
+    "id": "dca",
+    "title": "Diploma in Computer Applications (DCA)",
+    "category": "Diploma",
+    "duration": "6 Months",
+    "fee": "₹4,500",
+    "description": "A foundational course covering computer basics, MS Office, internet fundamentals, and operating systems.",
+    "syllabus": [
+      "Computer Fundamentals & OS",
+      "MS Word, Excel, PowerPoint",
+      "Internet & Email Usage",
+      "Basic Hardware & Troubleshooting"
+    ]
+  },
+  {
+    "id": "adca",
+    "title": "Advanced Diploma in Computer Applications (ADCA)",
+    "category": "Diploma",
+    "duration": "12 Months",
+    "fee": "₹8,500",
+    "description": "Comprehensive IT diploma covering office automation, graphic designing, and financial accounting.",
+    "syllabus": [
+      "DCA Complete Syllabus",
+      "Tally Prime with GST",
+      "Photoshop & Graphic Basics",
+      "Web Design Fundamentals"
+    ]
+  },
+  {
+    "id": "tally",
+    "title": "Tally Prime with GST",
+    "category": "Accounting",
+    "duration": "3 Months",
+    "fee": "₹3,500",
+    "description": "Specialized financial accounting course designed for job readiness in businesses and offices.",
+    "syllabus": [
+      "Bookkeeping Fundamentals",
+      "Voucher Entry & Inventory",
+      "GST Calculation & Returns",
+      "Payroll & Financial Reports"
+    ]
+  },
+  {
+    "id": "dtp",
+    "title": "Desktop Publishing (DTP)",
+    "category": "Short Term",
+    "duration": "3 Months",
+    "fee": "₹3,000",
+    "description": "Learn digital designing tools for creating banners, pamphlets, cards, and publications.",
+    "syllabus": [
+      "Adobe Photoshop",
+      "CorelDRAW",
+      "PageMaker",
+      "Bengali/Nepali/English Typing"
+    ]
+  },
+  {
+    "id": "typing",
+    "title": "English & Local Language Typing",
+    "category": "Short Term",
+    "duration": "1 Month",
+    "fee": "₹1,200",
+    "description": "Speed development course for government exams and administrative office tasks.",
+    "syllabus": [
+      "Touch Typing Technique",
+      "Speed Improvement Exercises",
+      "Nepali & Unicode Typing Basics"
+    ]
+  }
+]
